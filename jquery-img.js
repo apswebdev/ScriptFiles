@@ -538,6 +538,12 @@ function downloading(canvas, temp_canvas){
 									jQuery(".dis").prop('disabled', true);
 									jQuery("#loader").hide();
 									window.location.href =  "download.php?path="+ file;
+								},
+                                                                
+                                                                error:function (xhr, ajaxOptions, thrownError){
+								if(xhr.status==404) {
+										alert(thrownError);
+									}
 								}
 	
 					});
